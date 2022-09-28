@@ -1,5 +1,5 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
 });
 
 //############################### SETORES ##################################
-var setores = [
+const setores = [
   {
     id: 1,
     nome: "vestidos",
@@ -35,7 +35,7 @@ router.get("/setores", function (req, res, next) {
 });
 
 router.get("/setores/:id", function (req, res, next) {
-  var setor = setores.filter((setor) => setor.id == req.params.id);
+  const setor = setores.filter((setor) => setor.id == req.params.id);
   if (setor == null || setor == "")
     return res.json({ erro: "O setor informado não existe" });
   res.json({ dados: setor });
@@ -62,7 +62,7 @@ router.delete("/setores/:id", function (req, res, next) {
 
 //############################### CLIENTES ##################################
 
-var clientes = [
+const clientes = [
   {
     id: 1,
     nome: "Romário",
@@ -88,7 +88,7 @@ router.get("/clientes", function (req, res, next) {
 });
 
 router.get("/clientes/:id", function (req, res, next) {
-  var cliente = clientes.filter((cliente) => cliente.id == req.params.id);
+  const cliente = clientes.filter((cliente) => cliente.id == req.params.id);
   if (cliente == null || cliente == "")
     return res.json({ erro: "O cliente informado não existe" });
   res.json({ dados: cliente });
@@ -115,7 +115,7 @@ router.delete("/clientes/:id", function (req, res, next) {
 
 //############################### PAGAMENTOS ##################################
 
-var pagamentos = [
+const pagamentos = [
   {
     id: 1,
     nome: "Pix",
@@ -149,7 +149,7 @@ router.get("/pagamentos", function (req, res, next) {
 });
 
 router.get("/pagamentos/:id", function (req, res, next) {
-  var pagamento = pagamentos.filter(
+  const pagamento = pagamentos.filter(
     (pagamento) => pagamento.id == req.params.id
   );
   if (pagamento == null || pagamento == "")

@@ -1,0 +1,314 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API de Loja Online",
+    "description": "Essa API serve para sites de vendas online",
+    "version": "1.0.0"
+  },
+
+  "serves": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Api de teste"
+    },
+    {
+      "url": "http://www.compreaqui.com",
+      "description": "Api de produção"
+    }
+  ],
+  "paths": {
+    "/setores": {
+      "get": {
+        "sumary": "Listar todos os setores",
+        "description": "Lista todos os setores cadastrados",
+        "tags": ["Setores"]
+      },
+      "post": {
+        "sumary": "Cadastro de um novo setor",
+        "description": "Cadastro de um novo setor",
+        "tags": ["Setores"],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/setor"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/setores/{id}": {
+      "get": {
+        "sumary": "Listar apenas um setor",
+        "description": "Lista apenas um setor cadastrado",
+        "tags": ["Setores"],
+        "parameters": [
+          {
+            "name": "setorId",
+            "in": "path",
+            "description": "Id do setor",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      },
+      "put": {
+        "sumary": "Atualizar o setor existente",
+        "description": "Atualiza o setor existente",
+        "tags": ["Setores"],
+        "parameters": [
+          {
+            "name": "setorId",
+            "in": "path",
+            "description": "Id do setor para ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/setor"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "sumary": "Excluir um setor existente",
+        "description": "Exclui um setor que já existe",
+        "tags": ["Setores"],
+        "parameters": [
+          {
+            "name": "setorId",
+            "in": "path",
+            "description": "Id do setor",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      }
+    },
+    "/clientes": {
+      "get": {
+        "sumary": "Listar todos os clientes",
+        "description": "Lista todos os clientes cadastrados",
+        "tags": ["Clientes"]
+      },
+      "post": {
+        "sumary": "Cadastro de um novo cliente",
+        "description": "Cadastro de um novo cliente",
+        "tags": ["Clientes"],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/cliente"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clientes/{id}": {
+      "get": {
+        "sumary": "Listar apenas um cliente",
+        "description": "Lista apenas um cliente cadastrado",
+        "tags": ["Clientes"],
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "path",
+            "description": "Id do setorcliente",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      },
+      "put": {
+        "sumary": "Atualizar o cliente existente",
+        "description": "Atualiza o cliente existente",
+        "tags": ["Clientes"],
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "path",
+            "description": "Id do cliente para ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/cliente"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "sumary": "Excluir um cliente existente",
+        "description": "Exclui um cliente que já existe",
+        "tags": ["Clientes"],
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "path",
+            "description": "Id do cliente",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      }
+    },
+    "/pagamentos": {
+      "get": {
+        "sumary": "Listar todos tipos de pagamento",
+        "description": "Lista todos os tipos de pagamento cadastrados",
+        "tags": ["Pagamentos"]
+      },
+      "post": {
+        "sumary": "Cadastro de um novo pagamento",
+        "description": "Cadastro de um novo pagamento",
+        "tags": ["Pagamentos"],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/pagamento"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Pagamentos/{id}": {
+      "get": {
+        "sumary": "Listar apenas um pagamento",
+        "description": "Lista apenas um pagamento cadastrado",
+        "tags": ["Pagamentos"],
+        "parameters": [
+          {
+            "name": "pagamentoId",
+            "in": "path",
+            "description": "Id do setorpagamento",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      },
+      "put": {
+        "sumary": "Atualizar o pagamento existente",
+        "description": "Atualiza o pagamento existente",
+        "tags": ["Pagamentos"],
+        "parameters": [
+          {
+            "name": "pagamentoId",
+            "in": "path",
+            "description": "Id do pagamento para ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/componentes/schemas/pagamento"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "sumary": "Excluir um pagamento existente",
+        "description": "Exclui um pagamento que já existe",
+        "tags": ["Pagamentos"],
+        "parameters": [
+          {
+            "name": "pagamentoId",
+            "in": "path",
+            "description": "Id do pagamento",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  "componentes": {
+    "schemas": {
+      "setor": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "cliente": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "CPF": {
+            "type": "string"
+          },
+
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "pagamento": {
+        "type": "object",
+        "properties": {
+          "valor": {
+            "type": "number"
+          },
+
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
